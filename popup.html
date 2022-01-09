@@ -10,19 +10,27 @@
     <div style="width: 300px;height: 300px;background-image: linear-gradient(to right, rgba(255,236,210,1), rgba(252,182,159,1));
         display: block;text-align: center;">
         <div>
-            <img src="logo.png" class="rounded-circle" style="padding: 5%;">
+            <img src="logo.png" style="padding: 5%;">
             <p style="font-weight: 900;color:darkgray;">Share your tabs with people</p>
         </div>
+        <div id= inputArea>
         <div class="mx-auto" style="padding: 10px;">
             <div class="input-group" style="opacity: 0.9;">
                 <span class="input-group-addon" id="basic-addon">Email</span>
-                <input type="text" class="form-control" placeholder="user@example.com" aria-describedby="basic-addon">
+                <input id="mailInput" type="text" class="form-control" placeholder="user@example.com" aria-describedby="basic-addon">
             </div>
             <div style="margin-top:10px;display: grid;">
-                <button type="button" size="small" class="btn btn-primary"><span class="align-middle">Send <span
+                <button id="sendButton" type="button" size="small" class="btn btn-primary"><span class="align-middle">Send <span
                             class="glyphicon glyphicon-send"></span> </span> </button>
             </div>
         </div>
     </div>
+        <div id="result" style="display:none; z-index: 100;" >
+            <p id="resultText" style="font-weight: 900;color:darkgray;"></p>
+            <button id="resultConfirmButton" type="button" size="small" class="btn btn-primary">OK</button>
+        </div>
+    </div>
+    
+    <script src="background.js"></script>
 </body>
 </html>
