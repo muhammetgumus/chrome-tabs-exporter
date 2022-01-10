@@ -1,5 +1,6 @@
 import { validateMail, sendMail } from './mail.js'
 import { SUCCESS, FAILED, INVALID } from './constants.js'
+import { convertUrlsToString } from './util.js'
 
 let mailInput = document.getElementById('mailInput')
 let inputArea = document.getElementById('inputArea')
@@ -31,14 +32,7 @@ function send() {
     } else {
         showResultArea()
         setResultMessage(INVALID)
-    }
-}
-
-function convertUrlsToString(urls) {
-    var result = "";
-    urls.forEach(url => result += url + "\n");
-    return encodeURIComponent(result);
-}
+    }}
 
 function setResultMessage(message) {
     resultText.innerHTML = message;
