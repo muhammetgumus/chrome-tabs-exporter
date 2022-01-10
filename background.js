@@ -1,4 +1,5 @@
 import { validateMail, sendMail } from './mail.js'
+import { SUCCESS, FAILED, INVALID } from './constants.js'
 
 let mailInput = document.getElementById('mailInput')
 let inputArea = document.getElementById('inputArea')
@@ -20,16 +21,16 @@ function send() {
         try {
             mailBodyText = convertUrlsToString(urls)
             if (sendMail(mailBodyText)) {
-                setResultMessage("Success")
+                setResultMessage(SUCCESS)
             } else {
-                setResultMessage("Failed")
+                setResultMessage(FAILED)
             }
         } catch (err) {
-            setResultMessage("Failed")
+            setResultMessage(FAILED)
         }
     } else {
         showResultArea()
-        setResultMessage("Mail address is invalid!")
+        setResultMessage(INVALID)
     }
 }
 
